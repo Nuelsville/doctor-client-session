@@ -12,6 +12,9 @@ export const swaggerOptions: swaggerJSDoc.Options = {
             {
                 url: "http://127.0.0.1:5500", // your backend URL
             },
+            {
+                url: "https://doctor-client-session.onrender.com/", // production URL
+            }
         ],
         tags: [
             {
