@@ -40,11 +40,8 @@ app.use((req: Request, res: Response, next) => {
   next();
 });
 
-if (!isProd) {
-  app.use("/api-docs", swaggerAuth, swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-} else {
-  app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-}
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use("/sessions", sessionRoutes);
 app.use("/seed", seedRoutes);
 app.use("/users", userRoutes);
