@@ -46,11 +46,8 @@ app.use("/sessions", sessionRoutes);
 app.use("/seed", seedRoutes);
 app.use("/users", userRoutes);
 app.use("/auth", authRoutes);
-app.use("/agora", agoraRoutes); // 👈 FIXED HERE
+app.use("/agora", agoraRoutes);
 
-
-
-// ✅ Test route for generating a Jitsi room + token
 app.get("/test-room", async (req, res): Promise<any> => {
   const room = generateJitsiRoomName();
   const token = generateJitsiToken(room, "Dr. Test");
